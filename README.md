@@ -1,22 +1,29 @@
-# OrbitTime Landing Page
+# Gagan Chouhan — Personal Portfolio
 
-A responsive marketing landing page built with semantic HTML, CSS and vanilla JavaScript.
+A responsive personal portfolio built with semantic HTML, custom CSS, and vanilla JavaScript.
 
-## Features
-- Responsive layouts for desktop, tablet and mobile
-- Animated dashboard preview and polished dashboard cards
-- Scroll-triggered reveal motion and animated proof-point counters
-- Reading progress indicator and elevated sticky navigation
-- Inline SVG icon system with no icon-library dependency
-- Button hover states and pointer press feedback
-- Pricing monthly/yearly toggle and mobile navigation
-- Reduced-motion preferences and keyboard-visible focus states
-- Lightweight image loading improvements
+## Design
+The hero takes inspiration from the provided reference: a rounded mint-to-blue gradient canvas, white pill navigation, large centered headline, and floating browser/project preview cards. The rest of the page is adapted into a developer portfolio rather than a SaaS product website.
+
+## Sections
+- Personal hero and project preview
+- About and development approach
+- Services and selected UI concepts
+- Skills and workflow
+- Contact call-to-action and GitHub profile links
+
+## Interactions
+- Responsive mobile navigation
+- Scroll-triggered section reveal motion
+- Scroll progress line
+- Subtle floating hero widgets and hover states
+- Button press feedback
+- Reduced-motion and keyboard focus support
 
 ## Run locally
-Open `index.html` in a browser. No build step or package install is required.
+Open index.html in a modern browser. No package installation or build step is required.
 
-## Files
-- `index.html`: page structure and content
-- `style.css`: layout, responsive styling, and visual polish
-- `script.js`: interactions, SVG icons, and motion
+## Project files
+- index.html — semantic page structure and content
+- style.css — visual design, responsive layouts, and animations
+- script.js — navigation, reveal motion, and interactions
