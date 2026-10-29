@@ -67,6 +67,26 @@
     revealItems.forEach((item) => item.classList.add('is-visible'));
   }
 
+
+  // Ensure scroll-reveal applies to every service/project card, even if markup is expanded later.
+  const scrollCards = document.querySelectorAll('.service-card, .project-card, .skill-card, .tool-card');
+  if (!reduceMotion && 'IntersectionObserver' in window) {
+    const cardObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -18px 0px' });
+    scrollCards.forEach((card, index) => {
+      card.classList.add('reveal');
+      card.style.setProperty('--reveal-delay', (index % 3) * 80 + 'ms');
+      cardObserver.observe(card);
+    });
+  } else {
+    scrollCards.forEach((card) => card.classList.add('is-visible'));
+  }
+
   // Keep footer year current.
   const year = document.getElementById('year');
   if (year) year.textContent = String(new Date().getFullYear());
