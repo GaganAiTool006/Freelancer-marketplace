@@ -87,6 +87,26 @@
     scrollCards.forEach((card) => card.classList.add('is-visible'));
   }
 
+
+  // Desktop pointer magnifier inspired by the supplied Dribbble reference.
+  const heroShell = document.querySelector('.hero-shell');
+  const magnifier = document.querySelector('.interactive-lens');
+  if (heroShell && magnifier && !reduceMotion && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    let lensFrame = 0;
+    heroShell.addEventListener('pointerenter', () => heroShell.classList.add('lens-active'));
+    heroShell.addEventListener('pointerleave', () => heroShell.classList.remove('lens-active'));
+    heroShell.addEventListener('pointermove', (event) => {
+      if (lensFrame) return;
+      lensFrame = window.requestAnimationFrame(() => {
+        const bounds = heroShell.getBoundingClientRect();
+        const x = event.clientX - bounds.left;
+        const y = event.clientY - bounds.top;
+        magnifier.style.transform = 'translate3d(' + (x - 95) + 'px,' + (y - 95) + 'px,0)';
+        lensFrame = 0;
+      });
+    }, { passive: true });
+  }
+
   // Keep footer year current.
   const year = document.getElementById('year');
   if (year) year.textContent = String(new Date().getFullYear());
