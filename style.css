@@ -587,3 +587,33 @@ html.motion-ready .reveal-delay-3{transition-delay:210ms}
   *,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
   html.motion-ready .reveal,html.motion-ready .reveal.is-visible{opacity:1!important;transform:none!important;transition:none!important}
 }
+
+
+/* === Portfolio polish: character illustration, skill rail and richer footer === */
+.character-card{position:absolute;z-index:4;right:-5.5%;top:5%;width:224px;padding:15px 14px 12px;border:1px solid rgba(255,255,255,.82);border-radius:25px;background:linear-gradient(155deg,rgba(255,255,255,.92),rgba(232,249,247,.78));box-shadow:0 24px 65px rgba(38,76,103,.17);backdrop-filter:blur(18px);transform:rotate(3deg);animation:characterFloat 6s ease-in-out infinite;overflow:hidden}
+.character-label{position:relative;z-index:2;display:flex;align-items:center;gap:7px;font-size:8px;font-weight:800;letter-spacing:.12em;color:#607186}
+.character-label i{width:7px;height:7px;border-radius:50%;background:#18b88c;box-shadow:0 0 0 4px rgba(24,184,140,.12)}
+.character-glow{position:absolute;width:145px;height:145px;border-radius:50%;background:radial-gradient(circle,rgba(94,201,232,.38),rgba(113,229,196,.05) 70%,transparent);top:65px;left:40px}
+.developer-character{position:relative;z-index:1;display:block;width:100%;height:225px;filter:drop-shadow(0 12px 9px rgba(32,64,88,.1))}
+.character-caption{display:flex;align-items:center;gap:8px;position:relative;z-index:2;padding:9px 8px 4px;border-top:1px solid rgba(139,164,184,.2)}
+.character-avatar{display:grid;place-items:center;width:31px;height:31px;border-radius:11px;background:#101d33;color:#fff;font-size:10px;font-weight:800}
+.character-caption strong,.character-caption small{display:block}.character-caption strong{font-size:10px;color:#15243a}.character-caption small{font-size:8px;color:#7b8998;margin-top:3px}.character-spark{margin-left:auto;color:#17ad8d;font-size:20px}
+.skill-rail{position:fixed;z-index:30;right:17px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:7px;padding:10px 8px;border:1px solid rgba(215,228,237,.85);border-radius:18px;background:rgba(255,255,255,.83);box-shadow:0 12px 35px rgba(22,47,72,.12);backdrop-filter:blur(16px)}
+.skill-rail-label{font-size:7px;font-weight:800;letter-spacing:.1em;color:#8290a1;text-align:center;padding:2px 5px 5px}
+.skill-rail a{display:flex;align-items:center;gap:9px;min-width:39px;min-height:39px;padding:5px;border-radius:12px;text-decoration:none;color:#18263b;transition:background .2s ease,transform .2s ease;overflow:hidden}
+.skill-rail a b{display:grid;place-items:center;flex:0 0 29px;height:29px;border-radius:9px;background:#e7f8f3;color:#0a9878;font-size:10px}
+.skill-rail a span{max-width:0;opacity:0;white-space:nowrap;font-size:10px;font-weight:700;transition:max-width .25s ease,opacity .2s ease}
+.skill-rail a:hover,.skill-rail a:focus-visible{background:#f0faf7;transform:translateX(-3px);outline:none}
+.skill-rail a:hover span,.skill-rail a:focus-visible span{max-width:95px;opacity:1}
+.footer-main{row-gap:25px}
+.footer-social-note{display:flex;flex-direction:column;gap:7px;max-width:220px;padding:17px 18px;border:1px solid rgba(255,255,255,.12);border-radius:17px;background:rgba(255,255,255,.045)}
+.footer-social-note strong{font-size:9px;letter-spacing:.13em;color:#75e2c4}
+.footer-social-note span{font-size:11px;line-height:1.65;color:#b3c2d6}
+.footer-social-note a{font-size:11px;font-weight:700;color:#fff;text-decoration:none;margin-top:3px}
+.footer-social-note a:hover{color:#75e2c4}
+.site-footer{background:radial-gradient(ellipse at 12% 0%,rgba(21,137,133,.2),transparent 36%),#08172d}
+@keyframes characterFloat{0%,100%{transform:translateY(0) rotate(3deg)}50%{transform:translateY(-10px) rotate(1deg)}}
+@media(max-width:1200px){.character-card{right:0;width:190px}.developer-character{height:195px}}
+@media(max-width:980px){.character-card{right:2%;top:0;width:155px;padding:10px;border-radius:20px}.developer-character{height:155px}.character-caption{gap:5px}.character-avatar{width:26px;height:26px}.character-caption strong{font-size:9px}.character-caption small{font-size:7px}.character-spark{font-size:15px}.skill-rail{right:8px}}
+@media(max-width:760px){.character-card{position:relative;right:auto;top:auto;width:min(245px,75%);margin:0 auto 20px;transform:none;animation:none}.developer-character{height:200px}.hero-stage{padding-top:0}.skill-rail{right:8px;top:auto;bottom:14px;transform:none;flex-direction:row;gap:4px;padding:6px;border-radius:15px}.skill-rail-label{display:none}.skill-rail a{min-width:35px;min-height:35px;padding:3px}.skill-rail a span{display:none}.skill-rail a b{flex-basis:29px}.footer-social-note{grid-column:1/-1;max-width:none}.footer-main{grid-template-columns:1fr;gap:20px}}
+@media(prefers-reduced-motion:reduce){.character-card{animation:none}}
