@@ -1208,3 +1208,79 @@ button:disabled,.button[aria-disabled="true"]{opacity:.6;cursor:not-allowed;tran
 .footer-social-note a{color:#078f83;border-color:#ccefe4;background:#effbf7}
 .footer-social-note a:hover{color:#fff;background:#13b58b;border-color:#13b58b}
 .skill-rail a:hover,.skill-rail a:focus-visible{background:rgba(19,181,139,.1)}
+
+
+/* ==========================================================
+   DEFINITIVE LIGHT PORTFOLIO FIX
+   The reference screenshot showed dark page bands and cards
+   hidden in long-page captures. Keep all sections light and
+   keep reveal content visible even when observers don't run.
+   ========================================================== */
+:root{
+ --ink:#14223a;--ink-soft:#2b4057;--muted:#667b8d;--muted-light:#8a9baa;
+ --paper:#f6fafb;--white:#fff;--line:#e1ebee;
+ --shadow:0 15px 42px rgba(31,75,91,.08);
+ --shadow-hover:0 24px 58px rgba(31,75,91,.14)
+}
+html,body{background:#f7fafb!important;color:#14223a}
+body{background:#f7fafb!important}
+.hero{background:#f7fafb!important;padding:10px 10px 0}
+.hero-shell{background:linear-gradient(118deg,#d9f7ec 0%,#e1f7f7 34%,#ccecff 69%,#eaf6ff 100%)!important}
+.section{background:#fff!important;color:#14223a}
+.about-section,.work-section,.process-section{background:#fff!important;color:#14223a}
+.services-section,.skills-section{background:#f5fafb!important;color:#14223a}
+.section-heading h2,.about-copy h2,.work-heading h2,.skills-copy h2,
+.service-card h3,.project-info h3,.process-step h3,.skills-panel-head h3{color:#14223a}
+.about-copy>p,.about-copy .section-lead,.section-heading>p,.work-heading>p,
+.service-card p,.project-info p,.process-step p,.skills-copy>p{color:#667b8d}
+.service-card,.project-card,.skills-panel,.skills-note,.process-step{
+ color:#14223a;background:#fff;border-color:#e1ebee
+}
+.project-visual{color:#14223a}
+.contact-section{background:#f7fafb!important}
+.contact-card{
+ color:#14223a!important;
+ background:linear-gradient(125deg,#e2f8f0 0%,#e5f5fb 55%,#d9edff 100%)!important;
+ border:1px solid rgba(255,255,255,.95)!important;
+ box-shadow:0 20px 50px rgba(39,86,106,.1)!important
+}
+.contact-card:before{background:radial-gradient(ellipse at 0 100%,rgba(19,181,139,.1),transparent 48%),radial-gradient(ellipse at 100% 0,rgba(58,145,206,.12),transparent 50%)}
+.contact-copy h2,.contact-copy h2 span{color:#14223a!important}
+.contact-copy>p{color:#5e7387!important}
+.contact-card .light-kicker{color:#078d7c}
+.contact-card .button-outline{color:#14223a!important;border-color:#bfd8dc!important;background:rgba(255,255,255,.55)!important}
+.contact-badge{color:#14223a!important;background:rgba(255,255,255,.8)!important;border-color:rgba(255,255,255,.9)!important}
+.contact-badge small{color:#71869a!important}
+.contact-badge strong{color:#14223a!important}
+.contact-stack span{color:#456074!important;background:rgba(255,255,255,.68)!important;border-color:#d7e9eb!important}
+.contact-signature{color:#14223a!important}
+.site-footer{background:#eef5f6!important;color:#14223a!important;border-top:1px solid #e0eaed}
+.footer-brand .brand-copy strong{color:#14223a!important}
+.footer-brand .brand-copy small{color:#71869a!important}
+.footer-main>p{color:#667b8d!important}
+.footer-links a,.footer-github{color:#50677b!important}
+.footer-links a:hover,.footer-github:hover{color:#078d76!important}
+.footer-bottom{color:#75899a!important;border-top-color:#dce7ea!important}
+.footer-social-note{background:#fff!important;color:#26364d!important;border-color:#dcebe9!important}
+.skill-rail{background:rgba(255,255,255,.94)!important;border-color:#dce8eb!important;box-shadow:0 10px 30px rgba(34,72,91,.12)!important}
+.skill-rail-label,.skill-rail a span{color:#64798b!important}
+.skill-rail a b{color:#078f83!important;background:#e2f8f1!important}
+.skill-rail a:hover,.skill-rail a:focus-visible{background:#e7f8f3!important}
+.toast{color:#14223a!important;background:#fff!important;border-color:#dce8eb!important}
+/* Content must never disappear in full-page screenshots or if JS observer fails. */
+html.motion-ready .reveal,
+html.motion-ready .service-card,
+html.motion-ready .project-card,
+html.motion-ready .skill-card,
+html.motion-ready .tool-card{
+ opacity:1!important;visibility:visible!important;transform:none;
+}
+html.motion-ready .reveal.is-visible,
+html.motion-ready .service-card.is-visible,
+html.motion-ready .project-card.is-visible,
+html.motion-ready .skill-card.is-visible,
+html.motion-ready .tool-card.is-visible{opacity:1!important;visibility:visible!important;transform:translateY(0)}
+@media(max-width:760px){
+ .contact-card{background:linear-gradient(145deg,#e2f8f0,#e5f5fb)!important}
+ .site-footer{background:#eef5f6!important}
+}
