@@ -101,7 +101,7 @@
         const bounds = heroShell.getBoundingClientRect();
         const x = event.clientX - bounds.left;
         const y = event.clientY - bounds.top;
-        magnifier.style.transform = 'translate3d(' + (x - 107) + 'px,' + (y - 107) + 'px,0)';
+        magnifier.style.transform = 'translate3d(' + (x - 85) + 'px,' + (y - 85) + 'px,0)';
         lensFrame = 0;
       });
     }, { passive: true });
