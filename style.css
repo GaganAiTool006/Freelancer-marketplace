@@ -1363,3 +1363,57 @@ html.motion-ready .tool-card.is-visible{opacity:1!important;visibility:visible!i
 @media(prefers-reduced-motion:reduce){
  .project-card,.service-card,.process-step{transition:none!important}
 }
+
+
+/* VISIBILITY HOTFIX: older reveal rules were overriding the earlier light-theme patch */
+html.motion-ready .reveal,
+html.motion-ready .reveal:not(.is-visible),
+html.motion-ready .service-card,
+html.motion-ready .project-card,
+html.motion-ready .skill-card,
+html.motion-ready .tool-card,
+.motion-ready .reveal,
+.motion-ready .reveal:not(.is-visible) {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+  filter: none;
+}
+html.motion-ready .reveal.is-visible,
+html.motion-ready .service-card.is-visible,
+html.motion-ready .project-card.is-visible,
+html.motion-ready .skill-card.is-visible,
+html.motion-ready .tool-card.is-visible {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+}
+.reveal, .service-card, .project-card, .skill-card, .tool-card {
+  visibility: visible;
+}
+.gradient-text {
+  background-image: linear-gradient(95deg,#078d78 0%,#168bb7 52%,#187fc1 100%) !important;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.section h2, .section h3, .section p, .section li,
+.contact-section h2, .contact-section p,
+.site-footer a, .site-footer p, .site-footer strong, .site-footer small {
+  overflow-wrap: anywhere;
+}
+.service-card, .project-card, .process-step, .skills-panel,
+.about-copy, .about-visual, .contact-copy, .contact-side {
+  min-width: 0;
+}
+.project-card::before, .project-card::after,
+.service-card::before, .service-card::after {
+  pointer-events: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  html.motion-ready .reveal,
+  html.motion-ready .reveal:not(.is-visible) {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
