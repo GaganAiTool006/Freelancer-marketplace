@@ -866,3 +866,83 @@ section:not(.hero) p,section:not(.hero) .section-description{color:#a6b6ca}
  .footer-social-note,.footer-social-note:after,.footer-social-note:before{transition:none}
  .footer-social-note:hover,.footer-social-note:focus-within{transform:none}
 }
+
+
+/* NAVIGATION + CONTROL VISIBILITY QA — dark portfolio */
+.site-header{padding-top:18px}
+.site-header .nav{
+  position:relative;display:grid;grid-template-columns:minmax(210px,1fr) auto minmax(210px,1fr);
+  align-items:center;gap:clamp(14px,2vw,28px);width:100%;max-width:1320px;min-height:68px;
+  padding:9px 12px 9px 18px;border-radius:22px;
+  background:rgba(8,19,33,.84);border:1px solid rgba(205,229,255,.17);
+  box-shadow:0 14px 40px rgba(0,0,0,.22),inset 0 1px rgba(255,255,255,.06);
+  backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px)
+}
+.site-header .brand{gap:11px;min-width:0}
+.site-header .brand-mark{width:39px;height:39px;flex-basis:39px;border-radius:13px;
+  background:linear-gradient(145deg,#4ce7c1,#147b91);color:#041522;font-size:12px;
+  box-shadow:0 5px 18px rgba(52,226,190,.17),inset 0 1px rgba(255,255,255,.45)}
+.site-header .brand-copy strong{font-size:13px;line-height:1.25;color:#f4f8ff;letter-spacing:-.3px}
+.site-header .brand-copy small{font-size:8px;letter-spacing:1.35px;color:#91a8bf}
+.site-header .nav-links{gap:clamp(14px,1.8vw,25px);min-width:0}
+.site-header .nav-links a{font-size:12px;font-weight:650;letter-spacing:.01em;color:#b8c8db;padding:9px 0}
+.site-header .nav-links a:after{bottom:0;height:2px;background:linear-gradient(90deg,#55e9c6,#66caff);border-radius:4px}
+.site-header .nav-links a:hover,.site-header .nav-links a.active{color:#65ebcb}
+.site-header .nav-actions{gap:15px;min-width:0}
+.site-header .nav-github{display:inline-flex;align-items:center;gap:7px;color:#c4d4e7;font-size:12px;font-weight:650}
+.site-header .nav-github svg{width:15px;height:15px;color:#5be6c5}
+.site-header .button-nav{min-height:40px;padding:0 17px;gap:8px;font-size:11px;letter-spacing:0}
+.site-header .button-nav svg{width:14px;height:14px}
+.site-header .nav-toggle{color:#eff8ff;background:rgba(255,255,255,.06);border:1px solid rgba(220,239,255,.22)}
+.site-header .nav-toggle span{background:#eaf5ff}
+.site-header .nav-toggle:focus-visible{outline-color:#5be6c5}
+.site-header.scrolled .nav{background:rgba(5,14,25,.96);border-color:rgba(107,229,202,.2);box-shadow:0 15px 42px rgba(0,0,0,.32)}
+/* Make inline icons align with their labels and never shrink or clip. */
+.button,.nav-github,.text-link,.footer-social-note a{line-height:1.25}
+.button svg,.nav-github svg,.text-link svg,.footer-social-note svg{display:block;flex:0 0 auto;max-width:1.25em;max-height:1.25em}
+button:disabled,.button[aria-disabled="true"]{opacity:.6;cursor:not-allowed;transform:none}
+@media(max-width:1100px){
+ .site-header .nav{grid-template-columns:minmax(180px,1fr) auto minmax(155px,1fr);gap:13px;padding-left:14px}
+ .site-header .nav-links{gap:13px}
+ .site-header .nav-links a{font-size:11px}
+ .site-header .nav-actions{gap:10px}
+ .site-header .nav-github{font-size:11px}
+ .site-header .button-nav{padding-inline:13px}
+}
+@media(max-width:900px) and (min-width:761px){
+ .site-header .nav{grid-template-columns:minmax(175px,1fr) auto auto;gap:13px}
+ .site-header .nav-links{gap:11px}
+ .site-header .nav-links a{font-size:10.5px}
+ .site-header .brand-copy strong{font-size:12px}
+ .site-header .nav-github{display:none}
+}
+@media(max-width:760px){
+ .site-header{padding:10px 10px 0}
+ .site-header .nav{grid-template-columns:minmax(0,1fr) auto auto;min-height:60px;gap:9px;padding:8px 9px 8px 12px;border-radius:19px}
+ .site-header .brand{gap:8px}
+ .site-header .brand-mark{width:34px;height:34px;flex-basis:34px;border-radius:11px}
+ .site-header .brand-copy strong{font-size:11px}
+ .site-header .brand-copy small{font-size:6.5px;letter-spacing:1px}
+ .site-header .nav-toggle{display:flex;width:36px;height:36px;gap:4px;border-radius:12px}
+ .site-header .nav-toggle span{width:14px}
+ .site-header .nav-links{position:absolute;z-index:50;top:calc(100% + 10px);left:0;right:0;display:none;flex-direction:column;align-items:stretch;gap:3px;padding:9px;
+  border:1px solid rgba(207,231,255,.17);border-radius:18px;background:rgba(7,18,31,.98);
+  box-shadow:0 22px 48px rgba(0,0,0,.42);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
+ .site-header .nav-links.open{display:flex}
+ .site-header .nav-links a{display:flex;align-items:center;min-height:43px;padding:10px 13px;border-radius:11px;font-size:13px;color:#c7d7e8}
+ .site-header .nav-links a:hover,.site-header .nav-links a.active{color:#65ebcb;background:rgba(83,229,195,.09)}
+ .site-header .nav-links a:after{display:none}
+ .site-header .nav-actions{gap:0}
+ .site-header .nav-github{display:none}
+ .site-header .button-nav{min-height:36px;padding:0 12px;font-size:10px;gap:6px}
+ .site-header .button-nav svg{width:12px;height:12px}
+}
+@media(max-width:380px){
+ .site-header .nav{gap:6px;padding-inline:8px}
+ .site-header .brand{gap:6px}
+ .site-header .brand-mark{width:31px;height:31px;flex-basis:31px}
+ .site-header .brand-copy strong{font-size:10px}
+ .site-header .brand-copy small{font-size:5.7px;letter-spacing:.8px}
+ .site-header .button-nav{padding-inline:9px;font-size:9px}
+ .site-header .nav-toggle{width:32px;height:32px}
+}
